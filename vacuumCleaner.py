@@ -167,18 +167,18 @@ def vacuumWorld():
             latestState.append(states[-1])
             roomWithVacuum = findVacuum(latestState, intNumOfRoom, i=0)
             clean(latestState, intNumOfRoom, roomWithVacuum[1], i=0)
-            if roomWithVacuum[0] == len(initialState1[0])-1:
+            if roomWithVacuum[0] == 0:
                 while not (states[-1] in goalState):
                     latestState.pop(-1)
                     latestState.append(states[-1])
                     roomWithVacuum = findVacuum(latestState, intNumOfRoom, i=0)
                     clean(latestState, intNumOfRoom, roomWithVacuum[1], i=0)
-                    if list(states[-1][0].keys())[1] != roomWithVacuum[1]:
+                    if list(states[-1][-1].keys())[1] != roomWithVacuum[1]:
                         if len(states) > i:
                             i += 1
                             latestState.pop(-1)
                             latestState.append(states[-1])
-                            moveLeft(latestState, intNumOfRoom, roomWithVacuum[1], i=0)
+                            moveRight(latestState, intNumOfRoom, roomWithVacuum[1], i=0)
                         i += 1
                 break
             if list(states[-1][0].keys())[1] != roomWithVacuum[1]:
