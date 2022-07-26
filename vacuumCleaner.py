@@ -197,6 +197,7 @@ def vacuumWorld():
     print(states[0])
     states.pop(0)
     for i in range(0, len(states)):
+        print("State ", i+1, end=": ")
         print(states[i])
     print("Optimum number of state: " + str(len(states)))
 
