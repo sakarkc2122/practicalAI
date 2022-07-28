@@ -76,10 +76,14 @@ def vacuumWorld():
     intNumOfRoom = int(input("Enter the number of room: "))
     for i in range(0, intNumOfRoom):
         roomName = input("Enter room name: ")
-        dirtStatus = input("Enter status of dirt in " + roomName + " (clean/dirty - 0/1): ")    # clean/dirty (0/1)
-        vacuumStatus = input("Enter status of vacuum in " + roomName + "(absent/present - 0/1): ")  # absent/present (0/1)
-        initialState.append({'V': vacuumStatus, roomName: dirtStatus})  # representation: [{}, {}, ...]
-    initialState1.append(initialState)  # Final representation: [[{}, {}, ...], [{}, {}, ...], ...]
+        # clean/dirty (0/1)
+        dirtStatus = input("Enter status of dirt in " + roomName + " (clean/dirty - 0/1): ")
+        # absent/present (0/1)
+        vacuumStatus = input("Enter status of vacuum in " + roomName + "(absent/present - 0/1): ") 
+        # representation: [{}, {}, ...]
+        initialState.append({'V': vacuumStatus, roomName: dirtStatus})  
+    # Final representation: [[{}, {}, ...], [{}, {}, ...], ...]
+    initialState1.append(initialState)  
     ### Initial States complete
 
     ### define Goal States:
