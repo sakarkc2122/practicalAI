@@ -1,59 +1,29 @@
 # AND
-from ast import Not
-
-
-A= 0 #False
-B= 1 #True
-
-x = (1 and 0) #x= A and B
-print(x)
-# >> 0
-x = (1 and 1)
-print(x)
-# >> 1
-x = (False and True)
-print(x)
-# >> False
-x = (True and True)
-print(x)
-# >> True
+def AND(A, B):
+  print("\nConjunction (AND)")
+  print("The output of", A, "and", B, "is:", A and B)
 
 # OR
-x = (0 or 0)
-print(x)
-x = (1 or 0)
-print(x)
-x = (1 or 1)
-print(x)
-x = (False or False)
-print(x)
-x = (False or True)
-print(x)
-x = (True or True)
-print(x)
+def OR(A, B):
+  print("\nDisjunction (OR)")
+  print("The output of", A, "or", B, "is:", A or B)
 
 # NOT
-x = (not 0)
-print(x)
-# >> True
-x = (not True)
-print(x)
-# >> False
+def NOT(A):
+  print("\nNegation (NOT)")
+  print("The output of not", A, "is:", not A)
 
 # Implies | Conditional
-def conditional(x, z):
-  if x == True:
-    return z
-  return True
-
-#x and z assign value
-x = True
-z = False
-#function call
-print(conditional(x, z))
+def conditional(A, B):
+  print("\nImplication (conditional)")
+  if A == 'True':
+    print("If A =", A, "and B =", B, ", A->B =", B)
+  else:
+    print("If A =", A, "and B =", B, ", A->B =", True)
 
 # If and only if | Biconditional
-def main(a, b):
+def biConditional(a, b):
+  print("\nBi-implication (bi-conditional) statement")
   def conditional(a, b):
     if a == True:
       return b
@@ -61,18 +31,14 @@ def main(a, b):
   A = conditional(a, b)
   B = conditional(b, a)
   if A == B:
-    return True
+    print("If A =", A, "and B =", B, ", A<->B =", True)
   else:
-    return False
+    print("If A =", A, "and B =", B, ", A<->B =", False)
 
-a, b = True, False
-print(main(a, b))
-
-a, b = True, True
-print(main(a, b))
-
-a, b = False, True
-print(main(a, b))
-
-a, b = False, False
-print(main(a, b))
+A = input("A: ")
+B = input("B: ")
+AND(A, B)
+OR(A, B)
+NOT(A)
+conditional(A, B)
+biConditional(A, B)

@@ -1,3 +1,4 @@
+#Using a Python dictionary to act as an adjacency list
 graph = {
   'A' : ['B','C'],
   'B' : ['D', 'E'],
